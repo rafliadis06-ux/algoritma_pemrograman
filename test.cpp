@@ -2,28 +2,30 @@
 
 using namespace std;
 
+// Fungsi rekursif untuk menghitung faktorial
+long long hitungFaktorial(int n) {
+    // Basis rekursi (Base case): Jika n adalah 0 atau 1, faktorialnya adalah 1
+    if (n <= 1) {
+        return 1;
+    } else {
+        // Langkah rekursif: n * faktorial(n-1)
+        return n * hitungFaktorial(n - 1);
+    }
+}
+
 int main() {
     int n;
-    // Menggunakan long long agar bisa menampung hasil angka besar
-    long long hasil = 1; 
 
-    // Meminta input user
+    // Meminta input dari pengguna
     cout << "Masukkan n: ";
     cin >> n;
 
-    // Cek jika input negatif (opsional, tapi praktik yang baik)
-    if (n < 0) {
-        cout << "Maaf, faktorial tidak berlaku untuk angka negatif." << endl;
-    } 
-    else {
-        // Proses Iteratif (Looping)
-        // Kita mulai dari 1 dan terus dikalikan sampai mencapai n
-        for (int i = 1; i <= n; i++) {
-            hasil = hasil * i;
-        }
-
-        // Menampilkan output sesuai format permintaan
-        cout << n << "! = " << hasil << endl;
+    cout << "Contoh Output:" << endl;
+    
+    // Looping untuk menampilkan deret dari 1 sampai n
+    for (int i = 1; i <= n; i++) {
+        // Memanggil fungsi rekursif untuk setiap angka i
+        cout << i << "! = " << hitungFaktorial(i) << endl;
     }
 
     return 0;
