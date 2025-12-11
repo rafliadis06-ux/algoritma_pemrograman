@@ -9,7 +9,7 @@ int factorial(int n) {
     }
 }
 
-int main() {
+int main() { 
     int n = 5;
     cout << "Faktorial dari " << n << " adalah " << factorial(n) << endl;
     return 0;
